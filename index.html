@@ -259,7 +259,8 @@ body.bts{background-color:#080808}
     <button aria-pressed="false" data-f="voxpop" data-m="video">Vox pops and reactions</button>
     <button aria-pressed="false" data-f="promo" data-m="video">Promos and shorts</button>
     <button aria-pressed="false" data-f="event" data-m="video">Events</button>
-    <button aria-pressed="false" data-f="scooter" data-m="photo" hidden>Scooter Fest</button>
+    <button aria-pressed="false" data-f="sf9" data-m="photo" hidden>Scooter Fest 9</button>
+    <button aria-pressed="false" data-f="scooter" data-m="photo" hidden>Scooter Fest Nakhon Pathom</button>
    </div>
    <div id="work"></div>
   </div>
@@ -464,7 +465,7 @@ function groups(side,prefix){
  }).join("");
 }
 /* Photos go here later, same shape as VIDEOS rows */
-const PHOTOS=[["s00",1400,933,"scooter"],["s01",1400,934,"scooter"],["s02",1400,933,"scooter"],["s03",1400,933,"scooter"],["s04",1400,933,"scooter"],["s05",1400,933,"scooter"],["s06",1400,933,"scooter"],["s07",1400,933,"scooter"],["s08",1400,933,"scooter"],["u5",1400,933,"scooter"],["s09",1400,933,"scooter"],["r00",1400,933,"scooter"],["v1",1400,933,"scooter"],["u2",1400,933,"scooter"],["r01",1400,933,"scooter"],["r02",1400,933,"scooter"],["u3",1400,933,"scooter"],["v2",1400,933,"scooter"],["r03",1400,933,"scooter"],["r04",1400,933,"scooter"],["n07",1400,933,"scooter"],["u4",1400,933,"scooter"],["r05",1400,933,"scooter"],["r06",1400,933,"scooter"],["v3",1400,933,"scooter"],["n09",1400,933,"scooter"],["u1",1400,933,"scooter"],["s22",1400,933,"scooter"],["r08",1400,933,"scooter"],["r09",1400,933,"scooter"],["r10",1400,933,"scooter"]];
+const PHOTOS=[["sf9-00",1400,933,"sf9"],["sf9-01",1400,933,"sf9"],["sf9-02",1400,933,"sf9"],["sf9-03",1400,933,"sf9"],["sf9-04",1400,933,"sf9"],["sf9-05",1400,933,"sf9"],["sf9-06",1400,933,"sf9"],["sf9-07",1400,933,"sf9"],["sf9-08",1400,933,"sf9"],["sf9-09",1400,933,"sf9"],["sf9-10",1400,933,"sf9"],["sf9-11",1400,933,"sf9"],["sf9-12",1400,933,"sf9"],["sf9-13",1400,933,"sf9"],["sf9-14",1400,933,"sf9"],["sf9-15",1400,933,"sf9"],["sf9-16",1400,933,"sf9"],["sf9-17",1400,933,"sf9"],["sf9-18",1400,933,"sf9"],["sf9-19",1400,933,"sf9"],["sf9-20",1400,933,"sf9"],["sf9-21",1400,933,"sf9"],["sf9-22",1400,933,"sf9"],["sf9-23",1400,933,"sf9"],["sf9-24",1400,933,"sf9"],["sf9-25",1400,933,"sf9"],["sf9-26",1400,933,"sf9"],["sf9-27",1400,933,"sf9"],["sf9-28",1400,933,"sf9"],["sf9-29",1400,933,"sf9"],["s00",1400,933,"scooter"],["s01",1400,934,"scooter"],["s02",1400,933,"scooter"],["s03",1400,933,"scooter"],["s04",1400,933,"scooter"],["s05",1400,933,"scooter"],["s06",1400,933,"scooter"],["s07",1400,933,"scooter"],["s08",1400,933,"scooter"],["u5",1400,933,"scooter"],["s09",1400,933,"scooter"],["r00",1400,933,"scooter"],["v1",1400,933,"scooter"],["u2",1400,933,"scooter"],["r01",1400,933,"scooter"],["r02",1400,933,"scooter"],["u3",1400,933,"scooter"],["v2",1400,933,"scooter"],["r03",1400,933,"scooter"],["r04",1400,933,"scooter"],["n07",1400,933,"scooter"],["u4",1400,933,"scooter"],["r05",1400,933,"scooter"],["r06",1400,933,"scooter"],["v3",1400,933,"scooter"],["n09",1400,933,"scooter"],["u1",1400,933,"scooter"],["s22",1400,933,"scooter"],["r08",1400,933,"scooter"],["r09",1400,933,"scooter"],["r10",1400,933,"scooter"]];
 const WORK={video:PROJECTS.flatMap(pr=>VIDEOS.filter(v=>v.p===pr.id&&v.k!=="bts")),photo:PHOTOS};
 const state={m:"video",f:"all"};
 function renderWork(){
