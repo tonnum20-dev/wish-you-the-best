@@ -285,13 +285,6 @@ body.bts{background-color:#080808}
    <button class="more" id="pmore" type="button">Show more</button>
    <p class="pcount" id="pcount"></p>
   </div>
-  <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
-   <img id="lbimg" alt="">
-   <button class="x" type="button" aria-label="Close">Close</button>
-   <button class="pv" type="button" aria-label="Previous photo">&#8592;</button>
-   <button class="nx" type="button" aria-label="Next photo">&#8594;</button>
-   <p class="ct" id="lbct"></p>
-  </div>
  </div>
 
  <section class="about pad" id="about">
@@ -313,6 +306,14 @@ body.bts{background-color:#080808}
   </dl>
  </section>
 </main>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+   <img id="lbimg" alt="">
+   <button class="x" type="button" aria-label="Close">Close</button>
+   <button class="pv" type="button" aria-label="Previous photo">&#8592;</button>
+   <button class="nx" type="button" aria-label="Next photo">&#8594;</button>
+   <p class="ct" id="lbct"></p>
+  </div>
 
 <footer class="pad"><span>© 2026 Wish You The Best</span><span>All photographs and films are protected by copyright.</span></footer>
 
@@ -499,7 +500,7 @@ function renderPhotos(reset){
 document.querySelectorAll('#behind .filter button').forEach(b=>b.onclick=()=>{ps.f=b.dataset.p;renderPhotos(true)});
 document.getElementById('pmore').onclick=()=>{ps.shown+=36;renderPhotos()};
 const lb=document.getElementById('lb'),lbimg=document.getElementById('lbimg');let lbi=0,lbFrom=null,lbItems=[],lbSrc=null;
-function lbShow(i){lbi=(i+lbItems.length)%lbItems.length;lbimg.src=lbSrc(lbItems[lbi]);document.getElementById('lbct').textContent=`${lbi+1} / ${lbItems.length}`}
+function lbShow(i){lbi=(i+lbItems.length)%lbItems.length;lbimg.src=lbSrc(lbItems[lbi]);document.getElementById('lbct').textContent=`${lbi+1} / ${lbItems.length}`;[1,-1].forEach(d=>{const n=lbItems[(lbi+d+lbItems.length)%lbItems.length];if(n)new Image().src=lbSrc(n)})}
 function lbOpen(items,src,i,from){lbItems=items;lbSrc=src;lbFrom=from;lbShow(i);lb.hidden=false;document.body.style.overflow="hidden";lb.querySelector('.x').focus()}
 function lbClose(){lb.hidden=true;document.body.style.overflow="";lbFrom&&lbFrom.focus()}
 document.getElementById('pgrid').onclick=e=>{const b=e.target.closest('.ph-item');if(b)lbOpen(ps.list,r=>`bts/${r[0]}.webp`,+b.dataset.i,b)};
